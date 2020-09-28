@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <title></title>
+</head>
+<body>
+
+    <!-- <li *ngFor="Let ciudad of ciudades; let i = index"></li> -->
+    <!-- <li *ngFor="let ciudad of ciudades; let i = index">
+        {{i}} {{ciudad.nCiudad}} {{ciudad.nPais}} {{ciudad.codigo}}
+    </li> -->
+
+    <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Ciudad</th>
+            <th scope="col">Pais</th>
+            <th scope="col">Codigo</th>
+          </tr>
+        </thead>
+       <tbody>
+
+                 
+          <tr *ngFor="let ciudad of ciudades; let i = index  let par = even;"[ngClass]="{rojo:par}">  
+            <th scope="row">{{i}}</th>
+            <td>{{ciudad.nCiudad}}</td>
+            <td>{{ciudad.nPais}}</td>
+            <td>{{ciudad.codigo}}</td>
+          </tr>
+     
+        </tbody>
+      </table>
+     
+      <!-- <h1>*ngFor</h1>
+      <div>
+          <h2>Ciudades.</h2>
+          <ul>
+              <li *ngFor="let ciudad of ciudades">
+                  {{ciudad.nCiudad}}
+              </li>
+          </ul>
+      </div>
+      {{ciudades[0].nCiudad}} {{ciudades[0].nPais}}{{ciudades[0].codigo}}
+  
+      <div *ngIf="ciudades.length===4;">
+        No tenemos ciudades
+    </div> -->
+
+<br>
+
+<!-- <form class="form-inline">
+  
+  <div class="form-group mx-sm-3 mb-2">
+  
+    <input type="text" class="form-control" id="newCiudad" [(ngModel)]="nuevaCiudad.nCiudad" placeholder="Ciudad">
+   
+    <input type="text" class="form-control" id="newCiudad" [(ngModel)]="nuevaCiudad.nPais" placeholder="Pais">
+   
+    <input type="text" class="form-control" id="newCiudad" [(ngModel)]="nuevaCiudad.codigo" placeholder="Codigo">
+  </div>
+  <button type="button" class="btn btn-dark" (click)="addCiudad">Añadir</button>
+</form> -->
+
+<div>
+    <input type="text" #ciudad>
+    <input type="text" #pais>
+    <input type="text" #codigo>
+    <button (click)=enviar(ciudad,pais,codigo)>Ciudad nueva</button>
+</div>
+
+
+
+    
+</body>
+</html>
